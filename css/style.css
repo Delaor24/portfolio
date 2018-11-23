@@ -1,0 +1,924 @@
+/*-----------------------------------------------------------------------------------
+
+ Theme Name: Buka
+ Theme URI: http://
+ Description: The Multi-Purpose Onepage Template
+ Author: ui-themez
+ Author URI: http://themeforest.net/user/ui-themez
+ Version: 1.0
+
+ Main Color   : #111
+ main Font    : Rubik
+
+-----------------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+
+ == Table Of Content
+
+	01 Basics
+	02 Navbar
+	03 Header
+	04 Hero
+	05 Services
+	06 Numbers
+	07 Works
+	08 Testimonials
+	09 Blog
+	10 Contact
+	11 Footer
+	12 Responsive
+ 
+
+---------------------------------------------------------------- */
+/* ----------------------------------------------------------------
+     [ 01 Start Basics ]
+-----------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  word-wrap: break-word;
+}
+
+body {
+  color: #000;
+  line-height: 1.3;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: 'Rubik', sans-serif;
+  overflow-x: hidden !important;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #8a8a8a;
+  line-height: 2;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+span, a, a:hover {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-padding {
+  padding: 120px 0;
+}
+
+.section-head {
+  margin-bottom: 80px;
+}
+.section-head h3 {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.section-head span {
+  position: relative;
+}
+.section-head span:after, .section-head span:before {
+  content: '';
+  width: 100px;
+  height: 3px;
+  position: absolute;
+  top: 9px;
+  background: #555;
+}
+.section-head span:after {
+  right: 0;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#555));
+  background: linear-gradient(to right, transparent, #555);
+}
+.section-head span:before {
+  left: 0;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#555));
+  background: linear-gradient(to left, transparent, #555);
+}
+.section-head span i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #555;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: relative;
+  z-index: 3;
+}
+
+.bg-gray {
+  background: #f7f7f7;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.position-re {
+  position: relative;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.valign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.v-middle {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 15px;
+  line-height: .7;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 8px;
+  height: 8px;
+  margin: 0 7px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  background: transparent;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #eee;
+}
+
+.cd-headline {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-headline {
+    font-size: 4.4rem;
+    font-weight: 300;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-headline {
+    font-size: 6rem;
+  }
+}
+.cd-words-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+
+.cd-words-wrapper b {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+}
+
+.cd-words-wrapper b.is-visible {
+  position: relative;
+}
+
+.no-js .cd-words-wrapper b {
+  opacity: 0;
+}
+
+.no-js .cd-words-wrapper b.is-visible {
+  opacity: 1;
+}
+
+/* xclip */
+.cd-headline.clip span {
+  display: inline-block;
+  padding: .2em 0;
+}
+
+.cd-headline.clip .cd-words-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.cd-headline.clip .cd-words-wrapper::after {
+  /* line */
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 2px;
+  height: 70%;
+  background-color: #aebcb9;
+}
+
+.cd-headline.clip b {
+  opacity: 0;
+}
+
+.cd-headline b.is-visible {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------------
+     [ End Basics ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 02 Start Navbar ]
+-----------------------------------------------------------------*/
+.navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 9;
+  min-height: 80px;
+}
+.navbar .icon-bar {
+  color: #fff;
+}
+.navbar .navbar-nav .nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: #eee;
+  letter-spacing: .5px;
+  margin: 15px 5px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  position: relative;
+}
+.navbar .navbar-nav .nav-link:after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  bottom: -5px;
+  opacity: 0;
+  left: calc(50% - 15px);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.navbar .navbar-nav .active:after {
+  bottom: 0px;
+  opacity: 1;
+}
+
+.nav-scroll {
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+}
+.nav-scroll .icon-bar {
+  color: #222;
+}
+.nav-scroll .navbar-nav .nav-link {
+  color: #222;
+}
+.nav-scroll .navbar-nav .nav-link:after {
+  background: #222;
+}
+.nav-scroll .navbar-nav .logo {
+  padding: 15px 0;
+  color: #111;
+}
+
+.logo {
+  padding: 15px 0;
+  width: 100px;
+  color: #fff;
+  font-size: 20px;
+}
+
+/* ----------------------------------------------------------------
+     [ End Navbar ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 03 Start Header ]
+-----------------------------------------------------------------*/
+.header {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.header .caption h6 {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.header .caption h1 {
+  margin: 10px 0;
+  font-size: 60px;
+  font-weight: 700;
+  font-family: inherit;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+}
+.header .caption p {
+  font-size: 15px;
+  font-weight: 300;
+  color: #eee;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+.header .caption .social a {
+  color: #fff;
+  font-size: 12px;
+  margin: 0 10px;
+}
+.header .caption .butn {
+  color: #fff;
+  padding: 12px 40px;
+  border: 1px solid #eee;
+  border-radius: 30px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.header .caption .butn:hover {
+  background: #eee;
+  color: #111;
+}
+.header #particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.header .bg-vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.header.creative .svg {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.header.creative .svg svg {
+  fill: #fff;
+  width: 101%;
+}
+
+/* ----------------------------------------------------------------
+     [ End Header ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 04 Start Hero ]
+-----------------------------------------------------------------*/
+.hero {
+  position: relative;
+}
+.hero .hero-img {
+  position: relative;
+}
+.hero .hero-img:after {
+  content: '';
+  width: 90%;
+  position: absolute;
+  top: -200%;
+  bottom: -200%;
+  left: 0;
+  background-image: url(../img/dots.png);
+  background-repeat: repeat;
+  z-index: -1;
+}
+.hero .hero-img .img {
+  padding: 0 30px 30px 15px;
+  position: relative;
+}
+.hero .hero-img .img:before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  right: 0;
+  left: 45px;
+  bottom: 0;
+  border: 10px solid #eee;
+}
+.hero .hero-img .img img {
+  position: relative;
+  z-index: 2;
+}
+.hero .content {
+  padding-left: 30px;
+}
+.hero .content h3 {
+  font-weight: 600;
+}
+.hero .content span {
+  margin: 10px 0 15px;
+  color: #555;
+  font-weight: 500;
+}
+.hero .content .skills .skill-item {
+  margin-bottom: 20px;
+}
+.hero .content .skills .skill-item:last-child {
+  margin-bottom: 0;
+}
+.hero .content .skills .skill-item h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.hero .content .skills .skill-progress {
+  width: 100%;
+  height: 26px;
+  border: 4px solid #f7f7f7;
+  background: #f7f7f7;
+  border-radius: 20px;
+  position: relative;
+  -webkit-box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.08) inset;
+          box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.08) inset;
+}
+.hero .content .skills .skill-progress .progres {
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  left: 0;
+  top: 0;
+  background: #111;
+  background: -webkit-gradient(linear, left top, right top, from(#555), to(#111));
+  background: linear-gradient(to right, #555, #111);
+  border-radius: 20px;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+.hero .content .skills .skill-progress .progres:before {
+  content: attr(data-value);
+  padding: 3px 10px 2px;
+  border-radius: 10px;
+  font-size: 10px;
+  color: #fff;
+  background: #333;
+  position: absolute;
+  top: -35px;
+  right: 0;
+}
+.hero .content .skills .skill-progress .progres:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 5px solid #333;
+  position: absolute;
+  top: -12px;
+  right: 15px;
+}
+.hero .wave {
+  position: absolute;
+  top: -100px;
+  left: -5%;
+  width: 110%;
+  height: 100px;
+  background-image: url(../img/wave.svg);
+  background-size: cover;
+  z-index: 1;
+}
+
+/* ----------------------------------------------------------------
+     [ End Hero ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 05 Start Services ]
+-----------------------------------------------------------------*/
+.services .item {
+  padding: 30px;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.services .item .icon {
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: #555;
+  position: relative;
+  z-index: 3;
+}
+.services .item .icon:after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fafafa;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#fafafa));
+  background: linear-gradient(to right, transparent, #fafafa);
+  position: absolute;
+  top: 0;
+  left: 5px;
+  z-index: -1;
+}
+.services .item h6 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* ----------------------------------------------------------------
+     [ End Services ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 06 Start Numbers ]
+-----------------------------------------------------------------*/
+.numbers {
+  padding: 80px 0;
+}
+.numbers.minimal .icon:after {
+  background: rgba(180, 180, 180, 0.2);
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(rgba(180, 180, 180, 0.2)));
+  background: linear-gradient(to right, transparent, rgba(180, 180, 180, 0.2));
+}
+.numbers.minimal h6 {
+  color: #8a8a8a;
+}
+.numbers .icon {
+  font-size: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 3;
+}
+.numbers .icon:after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(250, 250, 250, 0.2);
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(rgba(250, 250, 250, 0.2)));
+  background: linear-gradient(to right, transparent, rgba(250, 250, 250, 0.2));
+  position: absolute;
+  top: 0;
+  left: 5px;
+  z-index: -1;
+}
+.numbers h4 {
+  margin-bottom: 15px;
+}
+.numbers h6 {
+  font-weight: 400;
+}
+
+/* ----------------------------------------------------------------
+     [ End Numbers ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 07 Start Works ]
+-----------------------------------------------------------------*/
+.works .filtering span {
+  margin: 0 5px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.works .filtering .active {
+  background: #111;
+  -webkit-box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+.works .item-img {
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden;
+}
+.works .item-img:hover .item-img-overlay {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  opacity: 1;
+  -webkit-transition: opacity 0s, -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: opacity 0s, -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0s;
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0s, -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.works .item-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+.works .item-img-overlay .icon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #f7f7f7;
+  margin: 15px 5px 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.works .item-img-overlay .icon:hover {
+  background: #111;
+  color: #fff;
+}
+.works .item-img-overlay .icon:before {
+  line-height: 2;
+}
+
+/* ----------------------------------------------------------------
+     [ End Works ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 08 Start Testimonials ]
+-----------------------------------------------------------------*/
+.testimonials.minimal .item p {
+  color: #8a8a8a;
+}
+.testimonials .icon {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.testimonials .item p {
+  font-size: 16px;
+  font-family: inherit;
+  font-style: italic;
+  color: #ccc;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+.testimonials .item h6 {
+  margin-bottom: 5px;
+}
+.testimonials .item h5 {
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* ----------------------------------------------------------------
+     [ End Testimonials ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 09 Start Blog ]
+-----------------------------------------------------------------*/
+.blog .item {
+  -webkit-box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+.blog .item .post-img .img {
+  overflow: hidden;
+}
+.blog .item .post-img:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+.blog .item .post-img img {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.blog .item .cont {
+  padding: 30px;
+}
+.blog .item .info {
+  margin-bottom: 10px;
+}
+.blog .item .info a {
+  color: #888;
+  font-size: 12px;
+  margin: 0 5px 5px;
+}
+.blog .item .info a:after {
+  content: '/';
+  position: relative;
+  margin-left: 10px;
+}
+.blog .item .info a:last-child:after {
+  display: none;
+}
+.blog .item h6 {
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+/* ----------------------------------------------------------------
+     [ End Blog ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 10 Start Contact ]
+-----------------------------------------------------------------*/
+.contact .form input, .contact .form textarea {
+  width: 100%;
+  padding: 20px 15px;
+  background: #fafafa;
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.contact .form textarea {
+  height: 160px;
+  max-height: 160px;
+  max-width: 100%;
+}
+.contact .form button {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 20px 40px;
+  color: #fff;
+  background: #111;
+  border: 1px solid #111;
+  -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.contact .form button:hover {
+  color: #111;
+  background: transparent;
+}
+
+/* ----------------------------------------------------------------
+     [ End Contact ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 11 Start Footer ]
+-----------------------------------------------------------------*/
+footer {
+  padding: 80px 0 0;
+}
+footer .item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+footer .item .icon {
+  color: #999;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+footer .item h6 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+footer .item p {
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+footer .sub-footer {
+  background: #444;
+  padding: 30px 0;
+  margin-top: 50px;
+}
+footer .social {
+  margin-bottom: 10px;
+}
+footer .social a {
+  font-size: 14px;
+  margin: 0 10px;
+  color: #eee;
+}
+footer .copy p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------------
+     [ End Footer ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+ 	 [ 12 Responsive ]
+-----------------------------------------------------------------*/
+@media screen and (max-width: 991px) {
+  .mb-md50 {
+    margin-bottom: 50px;
+  }
+
+  .mb-md30 {
+    margin-bottom: 30px;
+  }
+
+  .mb-md0 {
+    margin-bottom: 0;
+  }
+
+  .bgimg-height {
+    height: 400px;
+  }
+
+  .bg-fixed {
+    background-attachment: scroll !important;
+  }
+
+  .navbar {
+    padding-left: 15px;
+  }
+  .navbar .navbar-collapse {
+    max-height: 340px;
+    overflow: auto;
+    background: #111;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .navbar .nav-link {
+    margin: 10px auto !important;
+  }
+  .navbar .nav-scroll .navbar-collapse .nav-link {
+    color: #fff !important;
+  }
+  .navbar .nav-scroll .navbar-collapse .nav-link:after {
+    background: #fff;
+  }
+
+  .header {
+    background-attachment: scroll !important;
+    background-position: 50% 0% !important;
+  }
+  .header .caption h1 {
+    font-size: 30px;
+  }
+
+  .hero .hero-img:after {
+    display: none;
+  }
+
+  .hero .content {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .mb-sm50 {
+    margin-bottom: 50px;
+  }
+
+  .mb-sm30 {
+    margin-bottom: 30px;
+  }
+
+  .header .caption h1 {
+    font-size: 25px;
+  }
+  .header .caption p {
+    font-size: 12px;
+  }
+
+  .portfolio .filtering span {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section-head h3 {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
